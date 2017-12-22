@@ -7,5 +7,7 @@ public class main {
 		controlPicoPlacaBean control = new controlPicoPlacaBean();
 		
 		control.ingresoDatos();
+		control.procesarDatos();
+		control.emitirResultado();
 	}
 }
