@@ -1,6 +1,6 @@
 package ec.app.objeto;
 
-public class placa {
+public class Placa {
 
 	//var
 	private String placa;

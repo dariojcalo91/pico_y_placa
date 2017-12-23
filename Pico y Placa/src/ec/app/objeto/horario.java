@@ -1,6 +1,6 @@
 package ec.app.objeto;
 
-public class horario {
+public class Horario {
 
 	//variables
 	private String fecha;
