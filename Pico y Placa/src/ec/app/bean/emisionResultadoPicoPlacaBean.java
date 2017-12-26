@@ -8,7 +8,7 @@ import java.util.Locale;
 public class emisionResultadoPicoPlacaBean {
 	
 	// formateadores
-		private static DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)
+	private static DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)
 				.withLocale(Locale.GERMAN);
 		
 	// variables de tiempo para control de pico y placa
