@@ -1,6 +1,8 @@
 package ec.app.validador;
 
-public class validadorPlaca {
+import ec.app.interfaz.validar;
+
+public class validadorPlaca implements validar	 {
 
 	//variables
 	private int control = 1;
@@ -14,7 +16,7 @@ public class validadorPlaca {
 			control = -1;
 		}
 		//verificar si sigue el patron
-		if(!patron(placa)) {
+		if(!validarEstructura(placa, validar.PATRON_PLACA)) {
 			//controlar la estructura ABC-9999
 			control = -1;
 		}
@@ -23,7 +25,7 @@ public class validadorPlaca {
 	}
 	
 	// retorna true si el patron es el correcto
-    public boolean patron(String s){
-        return s.matches("[a-zA-Z]{3}[-][0-9]{4}");
+    public boolean validarEstructura(String s, String patron) {
+    	return s.matches(patron);
     }
 }

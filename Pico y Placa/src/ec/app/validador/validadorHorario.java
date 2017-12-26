@@ -1,6 +1,8 @@
 package ec.app.validador;
 
-public class validadorHorario {
+import ec.app.interfaz.validar;
+
+public class validadorHorario implements validar {
 
 	//variables
 		private int control = 1;
@@ -14,7 +16,7 @@ public class validadorHorario {
 				control = -1;
 			}
 			//verificar si sigue el patron
-			if(!patronFecha(fecha)) {
+			if(!validarEstructura(fecha, validar.PATRON_FECHA)) {
 				//controlar la estructura dd/MM/YYYY
 				control = -1;
 			}
@@ -30,21 +32,16 @@ public class validadorHorario {
 				control = -1;
 			}
 			//verificar si sigue el patron
-			if(!patronHora(hora)) {
+			if(!validarEstructura(hora, validar.PATRON_HORA)) {
 				//controlar la estructura dd/MM/YYYY
 				control = -1;
 			}
 			System.out.println("retorno");
 			return control;
 		}
-		
-		// retorna true si el patron es el correcto
-	    public boolean patronFecha(String s){
-	        return s.matches("[0-9]{2}[/][0-9]{2}[/][0-9]{4}");
-	    }
-	    
-	 // retorna true si el patron es el correcto
-	    public boolean patronHora(String s){
-	        return s.matches("[0-9]{2}[:][0-9]{2}");
-	    }
+
+	    // retorna true si el patron es el correcto
+	    public boolean validarEstructura(String s, String patron){
+	        return s.matches(patron);
+	    }    
 }
