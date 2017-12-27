@@ -25,7 +25,7 @@ public class ingresoDatosPicoPlacaBean {
 
 		System.out.println("Por favor ingrese la placa: (ej. ABC-9999)");
 		placa.setPlaca(entradaEscaner.nextLine()); // Invocamos un método sobre un objeto Scanner, para asignar el valor
-		if (validadorPlaca.validarPlaca(placa.getPlaca()) != 1) {
+		if (!validadorPlaca.validarPlaca(placa.getPlaca())) {
 			System.out.println("el dato ingresado es incorrecto.");
 			System.exit(0);
 		}
@@ -36,7 +36,7 @@ public class ingresoDatosPicoPlacaBean {
 	public Horario ingresoDatosHorario() {
 		System.out.println("Por favor ingrese la fecha, separada por /: (ej. 25/12/2017)");
 		horario.setFecha(entradaEscaner.nextLine());
-		if (validadorHorario.validarHorarioFecha(horario.getFecha()) != 1) {
+		if (!validadorHorario.validarHorarioFecha(horario.getFecha())) {
 			System.out.println("el dato ingresado es incorrecto.");
 			System.exit(0);
 		}
@@ -45,7 +45,7 @@ public class ingresoDatosPicoPlacaBean {
 		System.out.println("Por favor ingrese la hora: (ej: 09:30)");
 		System.out.println("Hora:");
 		horario.setHora(entradaEscaner.nextLine());
-		if(validadorHorario.validarHorarioHora(horario.getHora()) != 1) {
+		if(!validadorHorario.validarHorarioHora(horario.getHora())) {
 			System.out.println("el dato ingresado es incorrecto.");
 			System.exit(0);
 		}

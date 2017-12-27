@@ -10,8 +10,8 @@ public class validadorPlacaTest {
 	//Caso correcto
 	@Test
 	public void testValidarPlacaCorrecto() {
-		int resultadoReal;
-		int resultadoEsperado = 1;
+		boolean resultadoReal;
+		boolean resultadoEsperado = true;
 		validadorPlaca vp = new validadorPlaca();
 		resultadoReal = vp.validarPlaca("PIC-1512");
 		assertEquals(resultadoEsperado, resultadoReal);
@@ -22,8 +22,8 @@ public class validadorPlacaTest {
 	//Casos de error
 	@Test
 	public void testValidarPlacaIncorrecto1() {
-		int resultadoReal;
-		int resultadoEsperado = -1;
+		boolean resultadoReal;
+		boolean resultadoEsperado = false;
 		validadorPlaca vp = new validadorPlaca();
 		resultadoReal = vp.validarPlaca("PIC");
 		assertEquals(resultadoEsperado, resultadoReal);
@@ -32,8 +32,8 @@ public class validadorPlacaTest {
 	}
 	@Test
 	public void testValidarPlacaIncorrecto2() {
-		int resultadoReal;
-		int resultadoEsperado = -1;
+		boolean resultadoReal;
+		boolean resultadoEsperado = false;
 		validadorPlaca vp = new validadorPlaca();
 		resultadoReal = vp.validarPlaca("PIC15112");
 		assertEquals(resultadoEsperado, resultadoReal);
@@ -42,8 +42,8 @@ public class validadorPlacaTest {
 	}
 	@Test
 	public void testValidarPlacaIncorrecto3() {
-		int resultadoReal;
-		int resultadoEsperado = -1;
+		boolean resultadoReal;
+		boolean resultadoEsperado = false;
 		validadorPlaca vp = new validadorPlaca();
 		resultadoReal = vp.validarPlaca("-");
 		assertEquals(resultadoEsperado, resultadoReal);

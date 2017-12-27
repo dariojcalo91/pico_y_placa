@@ -5,20 +5,20 @@ import ec.app.interfaz.validar;
 public class validadorPlaca implements validar	 {
 
 	//variables
-	private int control = 1;
+	private boolean control = true;
 	
 	//metodos
-	public int validarPlaca(String placa) {
+	public boolean validarPlaca(String placa) {
 		System.out.println("validar placa: "+placa);
 		//manejar la estructura de la placa
 		if (placa.length() != 8) {
 			//la longitud de las placas de ecuador son de 8 digitos entre letras, numeros y el simbolo '-'
-			control = -1;
+			control = false;
 		}
 		//verificar si sigue el patron
 		if(!validarEstructura(placa, validar.PATRON_PLACA)) {
 			//controlar la estructura ABC-9999
-			control = -1;
+			control = false;
 		}
 		System.out.println("retorno");
 		return control;
